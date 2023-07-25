@@ -25,7 +25,7 @@
     "jhiPrefix": "jhi",
     "jhipsterVersion": "7.9.3",
     "jwtSecretKey": "ZTFkNTdmZWU3NzE0NTE1MDkyNTQyZTJjMGNlZTA3MGM3ZGFiNmZjMDUwMDBiMmM5OTJkZmZhNWVmNDg2MDFmMzQ1ZWU3MDRlOTY0OTUzZDg0MDgwZTE1YTdkZjYwNDQ4ZTBiMmJkYzllMjlkOWYyZDcyYTRhYjlmOTNlY2Y0ZGY=",
-    "languages": ["zh-cn"],
+    "languages": ["zh-cn", "zh-tw", "en"],
     "messageBroker": false,
     "microfrontend": false,
     "microfrontends": [],

@@ -83,7 +83,7 @@
       "id": "ID"
     },
     "ribbon": {
-      "dev": "Development"
+      "dev": "开发"
     },
     "item-count": "显示第 {{first}} - {{second}} 条，共 {{total}} 条"
   },
