@@ -97,7 +97,7 @@ module.exports = async (config, options, targetOptions) => {
       globOptions: { ignore: ['**/index.html'] },
     },
     {
-      from: path.join(path.dirname(require.resolve('axios/package.json')), 'dist/axios.min.js'),
+      from: require.resolve('axios/dist/axios.min.js'),
       to: 'swagger-ui/',
     },
     { from: './src/main/webapp/swagger-ui/', to: 'swagger-ui/' },
@@ -124,9 +124,6 @@ module.exports = async (config, options, targetOptions) => {
       output: {
         groupBy: [
           { pattern: './src/main/webapp/i18n/zh-cn/*.json', fileName: './i18n/zh-cn.json' },
-          { pattern: './src/main/webapp/i18n/en/*.json', fileName: './i18n/en.json' },
-          { pattern: './src/main/webapp/i18n/fr/*.json', fileName: './i18n/fr.json' },
-          { pattern: './src/main/webapp/i18n/zh-tw/*.json', fileName: './i18n/zh-tw.json' },
           // jhipster-needle-i18n-language-webpack - JHipster will add/remove languages in this array
         ],
       },
@@ -134,29 +131,7 @@ module.exports = async (config, options, targetOptions) => {
   );
 
   config = merge(
-    config,
-    targetOptions.configuration === 'instrumenter'
-      ? {
-          module: {
-            rules: [
-              {
-                test: /\.(js|ts)$/,
-                use: [
-                  {
-                    loader: 'babel-loader',
-                    options: {
-                      plugins: ['istanbul'],
-                    },
-                  },
-                ],
-                enforce: 'post',
-                include: path.resolve(__dirname, '../src/main/webapp/'),
-                exclude: [/\.(e2e|spec)\.ts$/, /node_modules/, /(ngfactory|ngstyle)\.js/],
-              },
-            ],
-          },
-        }
-      : {}
+    config
     // jhipster-needle-add-webpack-config - JHipster will add custom config
   );
 

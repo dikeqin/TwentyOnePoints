@@ -37,7 +37,7 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:file:./target/h2db/db/twentyonepoints;DB_CLOSE_DELAY=-1
+    url: jdbc:h2:file:./target/h2db/db/twentyonepoints;DB_CLOSE_DELAY=-1;MODE=LEGACY
     username: TwentyOnePoints
     password:
     hikari:
@@ -47,6 +47,7 @@ spring:
     console:
       # disable spring boot built-in h2-console since we start it manually with correct configuration
       enabled: false
+  jpa:
   elasticsearch:
     uris: http://localhost:9200
   liquibase:
@@ -91,7 +92,7 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 and be at least 256 bits long (you can type `openssl rand -base64 64` on your command line to generate a 512 bits one)
-        base64-secret: N2ZkMjNhMWI2OGZkMmRhNTlmNDczNDNiNThmMWYxNGM3M2JhOGM0OTA3YjYxYmU1ZmRhMGQzM2E2MmM3YjAwZTU4ZjI0Mzk0Yjk1NTc2ZTZiYzEzODQ5MzhmM2UyYzViZjU3OGYxZDhkNTdjYWE3OWNlYzM5Y2VlYWE2ZTA1MjY=
+        base64-secret: ZTFkNTdmZWU3NzE0NTE1MDkyNTQyZTJjMGNlZTA3MGM3ZGFiNmZjMDUwMDBiMmM5OTJkZmZhNWVmNDg2MDFmMzQ1ZWU3MDRlOTY0OTUzZDg0MDgwZTE1YTdkZjYwNDQ4ZTBiMmJkYzllMjlkOWYyZDcyYTRhYjlmOTNlY2Y0ZGY=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000
@@ -103,7 +104,7 @@ jhipster:
       enabled: false
       host: localhost
       port: 5000
-      ring-buffer-size: 512
+      queue-size: 512
 # ===================================================================
 # Application specific properties
 # Add your own application properties here, see the ApplicationProperties class

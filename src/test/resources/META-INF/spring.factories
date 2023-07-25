@@ -1,3 +1,1 @@
-org.springframework.test.context.ContextCustomizerFactory = com.pannk.health.\
-    config.TestContainersSpringContextCustomizerFactory,com.pannk.health.config.\
-    SqlTestContainersSpringContextCustomizerFactory
+org.springframework.test.context.ContextCustomizerFactory = com.pannk.health.config.TestContainersSpringContextCustomizerFactory
